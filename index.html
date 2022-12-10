@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hash</title>
+</head>
+<body>
+M:<input type="number" id="m"><br>
+<button onclick="del()">Метод деления</button><button onclick="umn()">Метод умножения</button>
+<p id="ans"></p>
+<script type="text/javascript">
+	function del() {
+		var M = document.getElementById('m').value;
+		var p = document.getElementById("ans");
+		var N = prompt("Введите N<M");
+		var k = [];
+		for(var i=0;i<N;i++) {
+			k[i] = prompt("Введите число");
+		}
+		var hash = [];
+		for(var i=0;i<N;i++) {
+			hash[i] = k[i]%M;
+		}
+		p.innerHTML = "Ключ: "+k+"<br>Хэш: "+hash;
+	}
+	function umn() {
+		var M = document.getElementById('m').value;
+		var p = document.getElementById("ans");
+		var A = Math.random();
+		console.log(A);
+		var N = prompt("Введите N<M");
+		var k = [];
+		for(var i=0;i<N;i++) {
+			k[i] = prompt("Введите число");
+		}
+		var hash = [];
+		for(var i=0;i<k.length;i++) {
+			hash[i] = Math.round(M*((k[i]*A)%1));
+		}
+		p.innerHTML = "Ключ: "+k+"<br>Хэш: "+hash;
+	}
+</script>
+</body>
+</html>
